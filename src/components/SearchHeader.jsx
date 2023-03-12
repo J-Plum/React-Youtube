@@ -3,7 +3,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 
 export default function SearchHeader() {
   const [text, setText] = useState("");
-  const {search} =useParams();
+  const {keyword} =useParams();
 
   const navigate = useNavigate();
 
@@ -13,8 +13,8 @@ export default function SearchHeader() {
   }
 
   useEffect(()=>{
-    setText(search || '');
-  },[search])
+    setText(keyword || '');
+  },[keyword])
 
   return (
     <header>

@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import {createBrowserRouter, RouterProvider } from "react-router-dom";
-import Videos from "./pages/Videos";
+import VideoList from "./pages/VideoList";
 import VideoDetail from "./pages/VideoDetail";
 import NotFound from "./pages/NotFound";
 
@@ -14,9 +14,9 @@ const router = createBrowserRouter([
     element: <App />, //최상위 경로
     errorElement: <NotFound />, //경로를 찾지 못할 경우 보여줄 페이지
     children : [
-      {index : true, element: <Videos />},
-      {path : 'videos', element : <Videos/>},
-      {path : 'videos/:search', element : <Videos/>},
+      {index : true, element: <VideoList />},
+      {path : 'videos', element : <VideoList/>},
+      {path : 'videos/:keyword', element : <VideoList/>},
       {path : 'videos/watch/:videoId', element : <VideoDetail/>}
     ]
   },
